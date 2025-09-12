@@ -1,13 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { BsImage, BsMusicNoteBeamed } from "react-icons/bs";
 import { HiVideoCamera } from "react-icons/hi";
 import { FaEdit, FaBrain, FaMagic } from "react-icons/fa";
 import { RiCpuLine } from "react-icons/ri";
 import { TbSwitchHorizontal } from "react-icons/tb";
 import { Tools } from "@/types/types";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
 
-// Updated data to match the image, including an 'isNew' flag for badges
 const tools: Tools[] = [
   {
     icon: <BsImage className="h-5 w-5 text-blue-600" />,
@@ -73,21 +74,27 @@ const tools: Tools[] = [
 ];
 
 export default function Generate() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleTools = showAll ? tools : tools.slice(0, 4);
+
   return (
-    // Removed mx-auto and max-w-7xl for more space
     <section className="py-10">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Generate</h2>
-        <button className="text-sm font-medium text-blue-600 hover:underline">
-          Show all
+        <h2 className="text-xl font-semibold dark:text-white">Generate</h2>
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="flex items-center justify-center space-x-0.5 text-sm font-medium text-blue-600 hover:underline"
+        >
+          <span>{showAll ? <HiChevronUp /> : <HiChevronDown />}</span>
+          <span>{showAll ? " Show less " : " Show all "}</span>
         </button>
       </div>
 
       {/* Grid of Tools */}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-        {tools.map((tool, idx) => (
-          // Switched card from flex to grid for better control over width
+        {visibleTools.map((tool, idx) => (
           <div
             key={idx}
             className="grid grid-cols-[1fr_auto] items-start gap-4 rounded-xl p-3 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -107,7 +114,7 @@ export default function Generate() {
                   </h3>
 
                   {tool.isNew && (
-                    <span className="rounded-md bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+                    <span className="rounded-md bg-blue-700 px-2 py-0.5 text-xs font-semibold text-white dark:bg-blue-900/50 dark:text-blue-300">
                       New
                     </span>
                   )}
@@ -119,7 +126,7 @@ export default function Generate() {
             </div>
 
             {/* Second grid column (Button) */}
-            <button className="bg-primary-gray-200 flex-shrink-0 rounded-2xl px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-300 dark:text-gray-300 dark:hover:bg-gray-700">
+            <button className="bg-primary-gray-200 flex-shrink-0 rounded-2xl px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-300 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
               {tool.action}
             </button>
           </div>

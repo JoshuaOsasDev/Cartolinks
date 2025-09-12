@@ -60,18 +60,17 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="mt-2 flex items-center justify-between">
+    <nav className="mt-3 flex items-center justify-between">
       {/* left (logo + user) */}
       <div className="flex items-center space-x-3">
-        <Image src="/kiAI.png" alt="logo" height={30} width={30} />
+        <Image
+          src={`${darkMode ? "/kiAIDark.png" : "/kiAI.png"}`}
+          alt="logo"
+          height={30}
+          width={30}
+        />
         <div className="flex cursor-pointer items-center space-x-2">
-          <Image
-            src="/nav_color.jfif"
-            alt="color-mix"
-            width={25}
-            height={25}
-            className="rounded-full"
-          />
+          <p className="h-8 w-8 rounded-full bg-linear-to-br from-sky-200 to-indigo-200"></p>
           <p className="text-primary-gray-700 flex items-center space-x-1 dark:text-gray-200">
             <span>joshuaosas</span>
             <span className="mt-1">
@@ -114,6 +113,9 @@ export default function Navbar() {
         >
           {darkMode ? <FaMoon /> : <HiLightBulb />}
         </button>
+
+        <p className="to-primary-yellow-400 from-primary-blue-500 h-8 w-8 rounded-full bg-linear-to-br"></p>
+
         {/* Hamburger (only mobile) */}
         <button
           className="rounded-md bg-gray-100 p-2 transition hover:bg-gray-200 md:hidden dark:bg-gray-700 dark:hover:bg-gray-600"
@@ -134,7 +136,14 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between border-b p-4 dark:border-gray-700">
-          <span className="text-lg font-semibold dark:text-white">Menu</span>
+          <span className="text-lg font-semibold dark:text-white">
+            <Image
+              src={`${darkMode ? "/kiAIDark.png" : "/kiAI.png"}`}
+              alt="logo"
+              height={30}
+              width={30}
+            />
+          </span>
           <button onClick={() => setMenuOpen(false)}>
             <HiMiniXMark className="text-2xl dark:text-white" />
           </button>
