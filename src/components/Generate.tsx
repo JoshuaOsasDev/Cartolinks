@@ -11,11 +11,11 @@ import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
 
 const tools: Tools[] = [
   {
-    icon: <BsImage size={30} className="text-blue-600" />,
+    icon: <BsImage size={30} className="text-white" />,
     title: "Image",
     description: "Generate images with custom styles in Flux and Ideogram.",
     action: "Open",
-    bg: "bg-blue-100",
+    bg: "bg-gradient-to-b from-gray-800 to-gray-500",
     isNew: true,
   },
   {
