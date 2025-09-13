@@ -27,8 +27,9 @@ const slides = [
     btn: "Learn More",
   },
   {
-    img: "/caro6.jfif",
+    img: "/caro8.png",
     title: "AI Enhancer",
+    subTitle: "AI Enhancer Source Models",
     desc: "Enhance and upscale your AI images with incredible detail.",
     btn: "Enhance Now",
   },
