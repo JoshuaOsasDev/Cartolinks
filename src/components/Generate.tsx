@@ -85,7 +85,7 @@ export default function Generate() {
         <h2 className="text-xl font-semibold dark:text-white">Generate</h2>
         <button
           onClick={() => setShowAll(!showAll)}
-          className="flex items-center justify-center space-x-0.5 text-sm font-medium text-blue-600 hover:underline"
+          className="flex cursor-pointer items-center justify-center space-x-0.5 text-sm font-medium text-blue-600 hover:underline"
         >
           <span>{showAll ? <HiChevronUp /> : <HiChevronDown />}</span>
           <span>{showAll ? " Show less " : " Show all "}</span>
@@ -126,7 +126,7 @@ export default function Generate() {
             </div>
 
             {/* Second grid column (Button) */}
-            <button className="bg-primary-gray-200 flex-shrink-0 rounded-2xl px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-300 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+            <button className="bg-primary-gray-200 flex-shrink-0 cursor-pointer rounded-2xl px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-300 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
               {tool.action}
             </button>
           </div>

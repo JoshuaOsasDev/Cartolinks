@@ -104,12 +104,12 @@ export default function Navbar() {
 
       {/* right actions (always visible) */}
       <div className="text-primary-gray-700 flex items-center space-x-2 dark:text-gray-200">
-        <button className="rounded-full bg-gray-100 p-2 transition hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600">
+        <button className="cursor-pointer rounded-full bg-gray-100 p-2 transition hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600">
           <BsBellFill />
         </button>
         <button
           onClick={() => setDarkMode((prev) => !prev)}
-          className="rounded-full bg-gray-100 p-2 transition hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
+          className="cursor-pointer rounded-full bg-gray-100 p-2 transition hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           {darkMode ? <FaMoon /> : <HiLightBulb />}
         </button>

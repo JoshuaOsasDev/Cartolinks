@@ -101,7 +101,7 @@ export default function Carousel() {
                       <p className="max-w-[14rem] text-xs text-gray-200 sm:max-w-[20rem] sm:text-sm md:text-base">
                         {slide.desc}
                       </p>
-                      <button className="w-fit rounded-full bg-white px-3 py-1 text-xs font-semibold text-black transition-colors hover:bg-gray-200 sm:px-4 sm:py-2 sm:text-sm md:px-6 md:text-base">
+                      <button className="w-fit cursor-pointer rounded-full bg-white px-3 py-1 text-xs font-semibold text-black transition-colors hover:bg-gray-200 sm:px-4 sm:py-2 sm:text-sm md:px-6 md:text-base">
                         {slide.btn}
                       </button>
                     </div>
@@ -130,13 +130,13 @@ export default function Carousel() {
       <div className="absolute right-0 -bottom-10 flex space-x-3">
         <button
           onClick={prevSlide}
-          className="rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 sm:p-3"
+          className="cursor-pointer rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 sm:p-3"
         >
           <HiChevronLeft size={20} />
         </button>
         <button
           onClick={nextSlide}
-          className="rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 sm:p-3"
+          className="cursor-pointer rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 sm:p-3"
         >
           <HiChevronRight size={20} />
         </button>
