@@ -11,7 +11,7 @@ import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
 
 const tools: Tools[] = [
   {
-    icon: <BsImage className="h-5 w-5 text-blue-600" />,
+    icon: <BsImage size={30} className="text-blue-600" />,
     title: "Image",
     description: "Generate images with custom styles in Flux and Ideogram.",
     action: "Open",
@@ -19,7 +19,7 @@ const tools: Tools[] = [
     isNew: true,
   },
   {
-    icon: <FaEdit className="h-5 w-5 text-purple-600" />,
+    icon: <FaEdit size={30} className="text-purple-600" />,
     title: "Edit",
     description: "Add objects, change style, or expand photos and generations.",
     action: "Open",
@@ -27,14 +27,14 @@ const tools: Tools[] = [
     isNew: true,
   },
   {
-    icon: <HiVideoCamera className="h-5 w-5 text-green-600" />,
+    icon: <HiVideoCamera size={30} className="text-green-600" />,
     title: "Video",
     description: "Generate videos with Haiper, Pika, Runway, Luma, and more.",
     action: "Open",
     bg: "bg-green-100",
   },
   {
-    icon: <BsMusicNoteBeamed className="h-5 w-5 text-orange-600" />,
+    icon: <BsMusicNoteBeamed size={30} className="text-orange-600" />,
     title: "Video Lipsync",
     description: "Lip sync any video to any audio.",
     action: "Open",
@@ -42,14 +42,14 @@ const tools: Tools[] = [
     isNew: true,
   },
   {
-    icon: <RiCpuLine className="h-5 w-5 text-sky-600" />,
+    icon: <RiCpuLine size={30} className="text-sky-600" />,
     title: "Realtime",
     description: "Realtime AI rendering on a canvas. Instant feedback loops.",
     action: "Open",
     bg: "bg-sky-100",
   },
   {
-    icon: <TbSwitchHorizontal className="h-5 w-5 text-rose-600" />,
+    icon: <TbSwitchHorizontal size={30} className="text-rose-600" />,
     title: "Motion Transfer",
     description: "Transfer motion to images and animate characters.",
     action: "Open",
@@ -57,7 +57,7 @@ const tools: Tools[] = [
     isNew: true,
   },
   {
-    icon: <FaMagic className="h-5 w-5 text-indigo-600" />,
+    icon: <FaMagic size={30} className="text-indigo-600" />,
     title: "Enhancer",
     description: "Upscale and enhance images and videos up to 22K.",
     action: "Open",
@@ -65,7 +65,7 @@ const tools: Tools[] = [
     isNew: true,
   },
   {
-    icon: <FaBrain className="h-5 w-5 text-gray-600" />,
+    icon: <FaBrain size={30} className="text-gray-600" />,
     title: "Train",
     description: "Teach Krea to replicate your style, products, or characters.",
     action: "Open",
@@ -93,33 +93,33 @@ export default function Generate() {
       </div>
 
       {/* Grid of Tools */}
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {visibleTools.map((tool, idx) => (
           <div
             key={idx}
-            className="grid grid-cols-[1fr_auto] items-start gap-4 rounded-xl p-3 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="flex items-center justify-between gap-4 rounded-xl p-3 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             {/* First grid column (Icon and Text) */}
-            <div className="grid grid-cols-[auto_1fr] items-start gap-3">
+            <div className="flex items-center gap-3">
               <div
-                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg ${tool.bg}`}
+                className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg ${tool.bg}`}
               >
                 {tool.icon}
               </div>
 
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-gray-900 dark:text-white">
+                  <h3 className="my-1 font-medium text-gray-900 dark:text-white">
                     {tool.title}
                   </h3>
 
                   {tool.isNew && (
-                    <span className="rounded-md bg-blue-700 px-2 py-0.5 text-xs font-semibold text-white dark:bg-blue-900/50 dark:text-blue-300">
+                    <span className="rounded-2xl bg-blue-700 px-2 py-1 text-xs font-semibold text-white dark:bg-blue-900/50 dark:text-blue-300">
                       New
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="max-w-[85%] text-sm text-gray-500 dark:text-gray-400">
                   {tool.description}
                 </p>
               </div>
